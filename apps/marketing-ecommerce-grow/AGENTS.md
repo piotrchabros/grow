@@ -44,7 +44,7 @@ E-commerce marketing managers, DTC brand founders focused on customer acquisitio
 
 - **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
 - **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights both Marketing and E-commerce as active, links to sibling service+industry pages
-- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text. The page must auto-detect the user's browser language and load in that language; default to **English** if the language is not supported
 
 ## Related Apps
 
