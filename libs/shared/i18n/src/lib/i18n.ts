@@ -29,6 +29,7 @@ export function initI18n(appResources?: AppResources) {
         pl: { translation: plTranslation },
       },
       fallbackLng: 'en',
+      keySeparator: false,
       interpolation: {
         escapeValue: false,
       },
