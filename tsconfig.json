@@ -32,6 +32,12 @@
     },
     {
       "path": "./libs/shared/test-utils"
+    },
+    {
+      "path": "./apps/grow-e2e"
+    },
+    {
+      "path": "./apps/grow"
     }
   ]
 }
