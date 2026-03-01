@@ -30,6 +30,12 @@ Business owners, founders, CTOs, CMOs, and decision-makers across all industries
 - Industry expertise with tailored solutions
 - Data-driven, results-oriented approach
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — the root app's megamenu shows top-level links to all service apps and industry apps
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Links to Child Apps
 
 - [Marketing Grow](../marketing-grow/AGENTS.md) — Marketing services

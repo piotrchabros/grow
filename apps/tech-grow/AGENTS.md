@@ -40,6 +40,12 @@ CTOs, VP of Engineering, technical founders, and product leaders looking for a d
 - Scalable architectures built for what comes next
 - From MVP to enterprise — we build at every stage
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights Technology as the active service, links to industry-specific tech pages
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Related Apps
 
 - **Parent:** [Grow (root)](../grow/AGENTS.md)

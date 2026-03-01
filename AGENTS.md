@@ -52,7 +52,9 @@ apps/
 │
 ├── *-e2e/                         # Playwright E2E tests (one per app)
 │
-libs/                              # Shared libraries (future)
+libs/
+├── shared/
+│   └── megamenu/                  # Shared megamenu navigation component
 ```
 
 ## Naming Conventions
@@ -151,6 +153,38 @@ Each application has its own `AGENTS.md` with specific details about what the ap
 | Consulting E-commerce Grow | [apps/consulting-ecommerce-grow/AGENTS.md](apps/consulting-ecommerce-grow/AGENTS.md) |
 | Tech E-commerce Grow       | [apps/tech-ecommerce-grow/AGENTS.md](apps/tech-ecommerce-grow/AGENTS.md)      |
 | AI E-commerce Grow         | [apps/ai-ecommerce-grow/AGENTS.md](apps/ai-ecommerce-grow/AGENTS.md)          |
+
+## Development Guidelines
+
+### Required Skills
+
+When implementing features across any app in this workspace, **always** use the following skills:
+
+- **`/content-design`** — Use for all user-facing text: button labels, headings, hero copy, CTAs, error messages, tooltips, empty states, modal copy, and any other UI copy. Invoke this skill before finalizing any text that will be visible to users.
+- **`/frontend-design`** — Use for all UI/UX implementation: component layout, visual design decisions, responsive behavior, spacing, typography, and interaction patterns. Invoke this skill when building or modifying any visual component.
+
+### Navigation — Shared Megamenu
+
+All apps use a **megamenu-style navigation** component. This is implemented as a shared library:
+
+```
+libs/shared/megamenu/             # Shared megamenu library
+```
+
+- The megamenu library lives in `libs/shared/megamenu` and is consumed by every app
+- Any navigation changes must be made in the shared library, not in individual apps
+- The megamenu must adapt its content per app (service links, industry links, CTAs) via configuration or props
+- When creating a new app, ensure it is wired into the megamenu configuration so it appears in the correct navigation hierarchy
+
+### Internationalization (i18n) — Polish & English
+
+Every app **must** support both **Polish (pl)** and **English (en)** languages:
+
+- All user-facing text must be internationalized — no hardcoded strings in components
+- Polish is the primary language; English is the secondary language
+- Use a shared i18n setup across all apps (translation files, language switcher, routing strategy)
+- Every new feature, page, or UI copy addition must include both `pl` and `en` translations
+- The `/content-design` skill should be used to write copy in both languages
 
 ## Tech Stack
 

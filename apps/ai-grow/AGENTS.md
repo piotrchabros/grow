@@ -36,6 +36,12 @@ CTOs, product leaders, and founders looking to adopt AI strategically — whethe
 - Conversational AI that handles real conversations, not just FAQs
 - AI embedded where it matters — inside your existing products and workflows
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights AI as the active service, links to industry-specific AI pages
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Related Apps
 
 - **Parent:** [Grow (root)](../grow/AGENTS.md)

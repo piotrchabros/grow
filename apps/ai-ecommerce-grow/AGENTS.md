@@ -40,6 +40,12 @@ E-commerce leaders exploring AI adoption, data-driven DTC brands looking for per
 - AI that pays for itself: measurable ROI from day one
 - From product recommendations to demand forecasting — AI across the entire e-commerce stack
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights both AI and E-commerce as active, links to sibling service+industry pages
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Related Apps
 
 - **Service parent:** [AI Grow](../ai-grow/AGENTS.md)

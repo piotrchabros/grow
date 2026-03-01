@@ -40,6 +40,12 @@ E-commerce CTOs, technical founders building custom storefronts, heads of engine
 - From Shopify themes to headless architecture — every level of complexity
 - Built to handle your biggest sales day, every day
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights both Technology and E-commerce as active, links to sibling service+industry pages
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Related Apps
 
 - **Service parent:** [Tech Grow](../tech-grow/AGENTS.md)

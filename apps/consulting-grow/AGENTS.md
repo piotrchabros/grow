@@ -40,6 +40,12 @@ CEOs, COOs, founders, and senior leadership seeking strategic guidance on busine
 - Data-informed decisions, measurable transformation
 - From diagnosis to execution — end-to-end support
 
+## Development Notes
+
+- **Skills:** Use `/content-design` for all UI copy and `/frontend-design` for all UI/UX implementation
+- **Navigation:** Uses the shared megamenu from `libs/shared/megamenu` — highlights Consulting as the active service, links to industry-specific consulting pages
+- **i18n:** All content must be available in both **Polish (pl)** and **English (en)**. No hardcoded strings — use the shared i18n setup for all user-facing text
+
 ## Related Apps
 
 - **Parent:** [Grow (root)](../grow/AGENTS.md)
