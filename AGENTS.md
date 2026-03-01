@@ -182,6 +182,7 @@ Every app **must** support both **Polish (pl)** and **English (en)** languages:
 
 - All user-facing text must be internationalized — no hardcoded strings in components
 - Polish is the primary language; English is the secondary language
+- **Auto-detection:** The page must automatically load in the user's browser language (via `navigator.language` / `Accept-Language` header). If the detected language is not supported, default to **English (en)**
 - Use a shared i18n setup across all apps (translation files, language switcher, routing strategy)
 - Every new feature, page, or UI copy addition must include both `pl` and `en` translations
 - The `/content-design` skill should be used to write copy in both languages
