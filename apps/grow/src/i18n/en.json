@@ -1,0 +1,29 @@
+{
+  "hero.title": "Grow Your Business with Expert Digital Solutions",
+  "hero.subtitle": "Marketing, consulting, technology, and AI — all under one roof. We help businesses scale with tailored strategies and cutting-edge tools.",
+  "hero.cta": "Schedule Consultation",
+
+  "services.title": "Our Solutions",
+  "services.subtitle": "Comprehensive digital services to accelerate your growth",
+  "services.marketing.title": "Marketing",
+  "services.marketing.description": "Data-driven digital marketing strategies that increase your visibility, engage your audience, and drive measurable growth.",
+  "services.consulting.title": "Consulting",
+  "services.consulting.description": "Strategic business consulting to optimize operations, identify opportunities, and navigate digital transformation.",
+  "services.technology.title": "Technology",
+  "services.technology.description": "Custom software development, cloud infrastructure, and modern tech solutions built for scale and performance.",
+  "services.ai.title": "AI",
+  "services.ai.description": "Artificial intelligence and machine learning solutions that automate processes and unlock new business insights.",
+
+  "industries.title": "Industries We Serve",
+  "industries.subtitle": "Specialized solutions for key sectors",
+  "industries.ecommerce.title": "E-commerce",
+  "industries.ecommerce.description": "End-to-end e-commerce solutions from platform development to marketing automation and AI-powered optimization.",
+  "industries.ecommerce.cta": "Explore E-commerce Solutions",
+
+  "contact.title": "Get in Touch",
+  "contact.subtitle": "Fill out the form below and we'll get back to you shortly.",
+
+  "cta.title": "Ready to Grow?",
+  "cta.subtitle": "Book a free consultation and discover how we can help your business reach its full potential.",
+  "cta.button": "Schedule Consultation"
+}

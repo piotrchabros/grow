@@ -1,0 +1,17 @@
+{
+  "nav.solutions": "Rozwi\u0105zania",
+  "nav.industries": "Bran\u017ce",
+  "nav.marketing": "Marketing",
+  "nav.marketing.description": "Strategie marketingu cyfrowego dla rozwoju Twojej marki",
+  "nav.consulting": "Konsulting",
+  "nav.consulting.description": "Ekspercki konsulting biznesowy i doradztwo",
+  "nav.technology": "Technologia",
+  "nav.technology.description": "Dedykowane rozwi\u0105zania software'owe i technologiczne",
+  "nav.ai": "AI",
+  "nav.ai.description": "Sztuczna inteligencja i rozwi\u0105zania automatyzacji",
+  "nav.ecommerce": "E-commerce",
+  "nav.ecommerce.description": "Kompleksowe rozwi\u0105zania e-commerce dla Twojego biznesu",
+  "footer.copyright": "\u00a9 {{year}} Grow. Wszelkie prawa zastrze\u017cone.",
+  "language.en": "EN",
+  "language.pl": "PL"
+}

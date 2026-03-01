@@ -1,0 +1,29 @@
+{
+  "hero.title": "Rozwijaj swój biznes z eksperckimi rozwiązaniami cyfrowymi",
+  "hero.subtitle": "Marketing, konsulting, technologia i AI — wszystko pod jednym dachem. Pomagamy firmom skalować się dzięki dopasowanym strategiom i nowoczesnym narzędziom.",
+  "hero.cta": "Umów konsultację",
+
+  "services.title": "Nasze rozwiązania",
+  "services.subtitle": "Kompleksowe usługi cyfrowe przyspieszające Twój rozwój",
+  "services.marketing.title": "Marketing",
+  "services.marketing.description": "Strategie marketingu cyfrowego oparte na danych, które zwiększają widoczność, angażują odbiorców i napędzają mierzalny wzrost.",
+  "services.consulting.title": "Konsulting",
+  "services.consulting.description": "Strategiczny konsulting biznesowy optymalizujący operacje, identyfikujący możliwości i wspierający transformację cyfrową.",
+  "services.technology.title": "Technologia",
+  "services.technology.description": "Dedykowane oprogramowanie, infrastruktura chmurowa i nowoczesne rozwiązania technologiczne zbudowane z myślą o skali i wydajności.",
+  "services.ai.title": "AI",
+  "services.ai.description": "Sztuczna inteligencja i uczenie maszynowe automatyzujące procesy i odkrywające nowe wnioski biznesowe.",
+
+  "industries.title": "Branże, które obsługujemy",
+  "industries.subtitle": "Specjalistyczne rozwiązania dla kluczowych sektorów",
+  "industries.ecommerce.title": "E-commerce",
+  "industries.ecommerce.description": "Kompleksowe rozwiązania e-commerce — od rozwoju platformy po automatyzację marketingu i optymalizację opartą na AI.",
+  "industries.ecommerce.cta": "Poznaj rozwiązania E-commerce",
+
+  "contact.title": "Skontaktuj się z nami",
+  "contact.subtitle": "Wypełnij poniższy formularz, a my skontaktujemy się z Tobą wkrótce.",
+
+  "cta.title": "Gotowy na rozwój?",
+  "cta.subtitle": "Umów bezpłatną konsultację i odkryj, jak możemy pomóc Twojemu biznesowi osiągnąć pełny potencjał.",
+  "cta.button": "Umów konsultację"
+}

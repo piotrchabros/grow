@@ -1,0 +1,33 @@
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  color: var(--color-text-primary, #1a1a1a);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  text-align: center;
+  color: var(--color-text-secondary, #666);
+  margin: 0 0 3rem;
+}
+
+.iframeWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.iframe {
+  width: 100%;
+  max-width: 720px;
+  min-height: 600px;
+  border: none;
+  border-radius: 0.75rem;
+}
