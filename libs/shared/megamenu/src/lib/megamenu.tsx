@@ -58,7 +58,8 @@ export function Megamenu({ config }: MegamenuProps) {
     <nav className={styles.nav} ref={navRef}>
       <div className={styles.container}>
         <a href="/" className={styles.logo}>
-          Grow
+          <img src="/grow.png" alt="" className={styles.logoIcon} />
+          <span><span className={styles.logoTextWhite}>Grow</span>Group</span>
         </a>
 
         <ul className={styles.categories}>

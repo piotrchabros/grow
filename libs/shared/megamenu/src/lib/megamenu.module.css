@@ -17,11 +17,24 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--color-primary, #2563eb);
   text-decoration: none;
   letter-spacing: -0.025em;
+}
+
+.logoIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.logoTextWhite {
+  color: #fff;
 }
 
 .categories {

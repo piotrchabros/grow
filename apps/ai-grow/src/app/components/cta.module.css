@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 5vw, 3rem);
+  background: var(--bg-deep);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Decorative ring with neon glow */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 45vw, 550px);
+  height: clamp(300px, 45vw, 550px);
+  border: 1px solid var(--accent-dim);
+  border-radius: 50%;
+  box-shadow: var(--glow-sm), inset var(--glow-sm);
+  opacity: 0.4;
+  animation: neonPulse 6s ease-in-out infinite;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg-deep);
+  background: var(--accent);
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--glow-md);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-lg);
+}
+
+.buttonArrow {
+  transition: transform 0.3s ease;
+}
+
+.button:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
+  }
+}
