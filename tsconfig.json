@@ -38,6 +38,60 @@
     },
     {
       "path": "./apps/grow"
+    },
+    {
+      "path": "./apps/ecommerce-grow-e2e"
+    },
+    {
+      "path": "./apps/ecommerce-grow"
+    },
+    {
+      "path": "./apps/ai-ecommerce-grow-e2e"
+    },
+    {
+      "path": "./apps/ai-ecommerce-grow"
+    },
+    {
+      "path": "./apps/marketing-ecommerce-grow-e2e"
+    },
+    {
+      "path": "./apps/marketing-ecommerce-grow"
+    },
+    {
+      "path": "./apps/consulting-ecommerce-grow-e2e"
+    },
+    {
+      "path": "./apps/consulting-ecommerce-grow"
+    },
+    {
+      "path": "./apps/tech-ecommerce-grow-e2e"
+    },
+    {
+      "path": "./apps/tech-ecommerce-grow"
+    },
+    {
+      "path": "./apps/tech-grow-e2e"
+    },
+    {
+      "path": "./apps/tech-grow"
+    },
+    {
+      "path": "./apps/marketing-grow-e2e"
+    },
+    {
+      "path": "./apps/marketing-grow"
+    },
+    {
+      "path": "./apps/ai-grow-e2e"
+    },
+    {
+      "path": "./apps/ai-grow"
+    },
+    {
+      "path": "./apps/consulting-grow-e2e"
+    },
+    {
+      "path": "./apps/consulting-grow"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "@org/consulting-grow",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "consulting-grow"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@org/marketing-ecommerce-grow",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "marketing-ecommerce-grow"
+  }
+}
