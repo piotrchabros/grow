@@ -2,7 +2,21 @@
   "name": "@org/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many -t dev --all",
+    "build": "nx run-many -t build --all",
+    "lint": "nx run-many -t lint --all",
+    "dev:grow": "nx dev grow",
+    "dev:marketing": "nx dev marketing-grow",
+    "dev:consulting": "nx dev consulting-grow",
+    "dev:technology": "nx dev tech-grow",
+    "dev:ai": "nx dev ai-grow",
+    "dev:ecommerce": "nx dev ecommerce-grow",
+    "dev:marketing-ecommerce": "nx dev marketing-ecommerce-grow",
+    "dev:consulting-ecommerce": "nx dev consulting-ecommerce-grow",
+    "dev:tech-ecommerce": "nx dev tech-ecommerce-grow",
+    "dev:ai-ecommerce": "nx dev ai-ecommerce-grow"
+  },
   "private": true,
   "dependencies": {
     "express": "^4.21.2",

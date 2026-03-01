@@ -6,12 +6,14 @@ export default defineConfig(() => ({
   root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/apps/ai-grow',
   server: {
-    port: 4200,
+    port: 4204,
     host: 'localhost',
+    strictPort: true,
   },
   preview: {
-    port: 4200,
+    port: 4204,
     host: 'localhost',
+    strictPort: true,
   },
   plugins: [react()],
   // Uncomment this if you are using workers.
