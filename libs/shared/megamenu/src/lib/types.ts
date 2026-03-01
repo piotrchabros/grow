@@ -1,7 +1,10 @@
+import type { ReactNode } from 'react';
+
 export interface MegamenuItem {
   labelKey: string;
   descriptionKey: string;
   href: string;
+  icon?: ReactNode;
 }
 
 export interface MegamenuCategory {

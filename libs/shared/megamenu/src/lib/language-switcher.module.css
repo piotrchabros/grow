@@ -24,7 +24,7 @@
 
 .active {
   background-color: var(--color-primary, #2563eb);
-  color: #fff;
+  color: var(--color-primary-text, #fff);
 }
 
 .active:hover {

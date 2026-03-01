@@ -11,8 +11,11 @@ export function MegamenuItem({ item }: MegamenuItemProps) {
 
   return (
     <a href={item.href} className={styles.item}>
-      <span className={styles.label}>{t(item.labelKey)}</span>
-      <span className={styles.description}>{t(item.descriptionKey)}</span>
+      {item.icon && <span className={styles.icon}>{item.icon}</span>}
+      <span className={styles.content}>
+        <span className={styles.label}>{t(item.labelKey)}</span>
+        <span className={styles.description}>{t(item.descriptionKey)}</span>
+      </span>
     </a>
   );
 }
