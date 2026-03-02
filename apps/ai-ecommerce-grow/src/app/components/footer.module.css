@@ -6,13 +6,14 @@
   justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
+  background: var(--bg-primary);
 }
 
 .copyright {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--color-white);
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
 .links {
@@ -22,15 +23,15 @@
 
 .link {
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--color-white);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease;
 }
 
 .link:hover {
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 
 .brand {
@@ -38,9 +39,8 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--color-white);
   letter-spacing: -0.02em;
 }
 
@@ -49,21 +49,17 @@
 }
 
 .brandTextSecondary {
-  color: var(--color-lime);
+  color: var(--accent-hover);
 }
 
 .brandTextPrimary {
-  color: var(--color-white);
+  color: var(--text-heading);
 }
 
 .brandIcon {
   width: 1.25rem;
   height: 1.25rem;
   object-fit: contain;
-}
-
-.brandWhite {
-  color: #fff;
 }
 
 @media (max-width: 480px) {
