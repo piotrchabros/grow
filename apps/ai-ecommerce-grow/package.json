@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "start": "DIST_DIR=./dist node ../../server.js",
     "lint": "eslint ."
   },
   "nx": {
