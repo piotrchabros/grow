@@ -11,8 +11,8 @@
 .copyright {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--color-white);
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
 .links {
@@ -24,13 +24,13 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: var(--accent);
+  color: var(--text-heading);
 }
 
 .brand {
@@ -40,7 +40,7 @@
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--text-heading);
   letter-spacing: -0.02em;
 }
 
@@ -49,11 +49,11 @@
 }
 
 .brandTextSecondary {
-  color: var(--color-lime);
+  color: var(--accent-hover);
 }
 
 .brandTextPrimary {
-  color: var(--color-white);
+  color: var(--text-heading);
 }
 
 .brandIcon {
@@ -63,7 +63,7 @@
 }
 
 .brandWhite {
-  color: #fff;
+  color: var(--text-heading);
 }
 
 @media (max-width: 480px) {

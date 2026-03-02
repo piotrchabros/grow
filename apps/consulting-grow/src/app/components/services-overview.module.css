@@ -1,11 +1,43 @@
 .section {
   padding: var(--section-padding);
   background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative teal circle */
+.section::before {
+  content: '';
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: 260px;
+  height: 260px;
+  background: var(--shape-teal);
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Rotating lime ring */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: -8%;
+  left: -3%;
+  width: 140px;
+  height: 140px;
+  border: 2px solid rgba(190, 232, 71, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateShape 25s linear infinite;
 }
 
 .inner {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -18,77 +50,82 @@
 }
 
 .sectionLabel {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
 }
 
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
+  gap: 1.5rem;
 }
 
 .card {
   display: block;
   padding: clamp(2rem, 4vw, 3rem);
   background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
   position: relative;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
 }
 
 .card:hover {
   background: var(--bg-elevated);
-  box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.03);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .card:hover .cardTitle {
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
 }
 
 .card:hover .cardNumber {
-  color: var(--accent);
-  text-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+  color: var(--color-dark);
+  background: var(--accent);
 }
 
 .cardNumber {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
   font-family: var(--font-display);
   font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-dim);
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+  border-radius: 50%;
   margin-bottom: 1.5rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .cardTitle {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
   margin-bottom: 1rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .cardDescription {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   max-width: 400px;
 }
 
@@ -101,4 +138,10 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+/* Local keyframes */
+@keyframes rotateShape {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
