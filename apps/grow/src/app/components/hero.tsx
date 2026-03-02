@@ -6,8 +6,11 @@ export function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.shape1} />
-      <div className={styles.shape2} />
+      {/* Decorative floating shapes */}
+      <div className={styles.shapeSquare} aria-hidden="true" />
+      <div className={styles.shapeDot} aria-hidden="true" />
+      <div className={styles.shapeRing} aria-hidden="true" />
+
       <div className={styles.container}>
         <div className={styles.content}>
           <span className="section-subtitle">{t('hero.eyebrow')}</span>

@@ -10,6 +10,10 @@ export function Cta() {
       <div className={styles.container}>
         <FadeIn>
           <div className={styles.inner}>
+            {/* Decorative floating shapes */}
+            <div className={styles.shapeSquare} aria-hidden="true" />
+            <div className={styles.shapeDot} aria-hidden="true" />
+
             <div className={styles.content}>
               <h2 className={styles.title}>{t('cta.title')}</h2>
               <p className={styles.description}>{t('cta.subtitle')}</p>

@@ -2,11 +2,27 @@
   padding: var(--section-padding);
   background: var(--bg-primary);
   overflow: hidden;
+  position: relative;
+}
+
+/* Subtle decorative cream circle */
+.section::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -8%;
+  width: 300px;
+  height: 300px;
+  background: var(--shape-cream);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1320px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .inner {
@@ -15,6 +31,7 @@
   padding: 4rem;
   position: relative;
   color: var(--color-white);
+  overflow: hidden;
 }
 
 .inner::after {
@@ -28,6 +45,20 @@
   background-size: cover;
   opacity: 0.1;
   pointer-events: none;
+}
+
+/* Decorative floating lime ring inside the dark card */
+.inner::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -5%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(190, 232, 71, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateShape 30s linear infinite;
 }
 
 .content {
@@ -77,4 +108,9 @@
   .inner {
     padding: 3rem 2rem;
   }
+}
+
+@keyframes rotateShape {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

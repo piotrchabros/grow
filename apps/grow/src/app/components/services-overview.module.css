@@ -2,11 +2,43 @@
   padding: var(--section-padding);
   background: var(--bg-secondary);
   position: relative;
+  overflow: hidden;
+}
+
+/* Decorative teal circle — background */
+.section::before {
+  content: '';
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: 380px;
+  height: 380px;
+  background: var(--shape-teal);
+  border-radius: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Small floating accent shape */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  left: 3%;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: rotateShape 25s linear infinite;
 }
 
 .container {
   max-width: 1320px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -23,9 +55,10 @@
 .card {
   background: var(--color-white);
   padding: 3rem 2rem;
-  border-radius: 15px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -34,8 +67,9 @@
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-lime);
 }
 
 .cardHeader {
@@ -54,6 +88,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover .iconBox {
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(190, 232, 71, 0.35);
 }
 
 .cardNumber {
@@ -92,4 +132,9 @@
   .card {
     padding: 2rem 1.5rem;
   }
+}
+
+@keyframes rotateShape {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
