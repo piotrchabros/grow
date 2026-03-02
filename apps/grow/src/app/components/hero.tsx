@@ -6,25 +6,25 @@ export function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.inner}>
-        <span className={styles.eyebrow}>
-          <span className={styles.eyebrowLine} />
-          {t('hero.eyebrow')}
-        </span>
-        <h1 className={styles.title}>
-          {t('hero.title.line1')}{' '}
-          <span className={styles.titleAccent}>{t('hero.title.accent')}</span>{' '}
-          {t('hero.title.line2')}
-        </h1>
-        <p className={styles.subtitle}>{t('hero.subtitle')}</p>
-        <a href={import.meta.env.VITE_CALCOM_URL} className={styles.cta}>
-          {t('hero.cta')}
-          <span className={styles.ctaArrow}>&rarr;</span>
-        </a>
-      </div>
-      <div className={styles.scrollIndicator}>
-        <span>Scroll</span>
-        <div className={styles.scrollLine} />
+      <div className={styles.shape1} />
+      <div className={styles.shape2} />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <span className="section-subtitle">{t('hero.eyebrow')}</span>
+          <h1 className={styles.title}>
+            {t('hero.title.line1')}{' '}
+            <span className={styles.accent}>{t('hero.title.accent')}</span>{' '}
+            {t('hero.title.line2')}
+          </h1>
+          <p className={styles.description}>
+            {t('hero.subtitle')}
+          </p>
+          <div className={styles.actions}>
+            <a href={import.meta.env.VITE_CALCOM_URL} className="ht_btn">
+              {t('hero.cta')}
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

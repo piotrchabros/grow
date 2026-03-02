@@ -1,89 +1,61 @@
 .section {
-  position: relative;
-  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 5vw, 3rem);
-  background: var(--bg-deep);
-  text-align: center;
-  overflow: hidden;
+  padding: var(--section-padding);
+  background: var(--bg-primary);
 }
 
-/* Decorative ring with neon glow */
-.section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(300px, 45vw, 550px);
-  height: clamp(300px, 45vw, 550px);
-  border: 1px solid var(--accent-dim);
-  border-radius: 50%;
-  box-shadow: var(--glow-sm), inset var(--glow-sm);
-  opacity: 0.4;
-  animation: neonPulse 6s ease-in-out infinite;
-}
-
-.inner {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
+.container {
+  max-width: 1320px;
   margin: 0 auto;
 }
 
-.title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.25rem;
-}
-
-.subtitle {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
-}
-
-.button {
-  display: inline-flex;
+.inner {
+  background: var(--color-lime);
+  border-radius: 30px;
+  padding: 4rem;
+  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 2.5rem;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--bg-deep);
-  background: var(--accent);
-  border: none;
-  border-radius: 2px;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: var(--glow-md);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.button:hover {
-  background: var(--accent-light);
-  transform: translateY(-2px);
-  box-shadow: var(--glow-lg);
+.inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("assets/img/shape/home__03.png") no-repeat center center;
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
 }
 
-.buttonArrow {
-  transition: transform 0.3s ease;
+.content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
-.button:hover .buttonArrow {
-  transform: translateX(4px);
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
+.description {
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
   }
 }

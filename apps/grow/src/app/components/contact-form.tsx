@@ -7,23 +7,25 @@ export function ContactForm() {
 
   return (
     <section className={styles.section} id="contact">
-      <div className={styles.inner}>
-        <FadeIn>
-          <div className={styles.header}>
-            <span className={styles.label}>{t('contact.label')}</span>
-            <h2 className={styles.title}>{t('contact.title')}</h2>
-            <p className={styles.subtitle}>{t('contact.subtitle')}</p>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.15}>
-          <div className={styles.iframeWrapper}>
-            <iframe
-              className={styles.iframe}
-              title="Contact Form"
-              loading="lazy"
-            />
-          </div>
-        </FadeIn>
+      <div className={styles.container}>
+        <div className={styles.inner}>
+          <FadeIn>
+            <div className={styles.header}>
+              <span className="section-subtitle">{t('contact.label')}</span>
+              <h2 className="section-title">{t('contact.title')}</h2>
+              <p className={styles.description}>{t('contact.subtitle')}</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className={styles.iframeWrapper}>
+              <iframe
+                className={styles.iframe}
+                title="Contact Form"
+                loading="lazy"
+              />
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

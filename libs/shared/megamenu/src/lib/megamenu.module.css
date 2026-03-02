@@ -33,8 +33,12 @@
   object-fit: contain;
 }
 
-.logoTextWhite {
-  color: #fff;
+.logoTextPrimary {
+  color: var(--color-primary, #2563eb);
+}
+
+.logoTextSecondary {
+  color: var(--color-lime, #bee847);
 }
 
 .categories {

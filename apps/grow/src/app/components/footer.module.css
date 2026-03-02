@@ -1,63 +1,91 @@
 .footer {
-  padding: 2.5rem clamp(1.5rem, 5vw, 3rem);
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: 5rem 1.5rem 2rem;
+}
+
+.container {
+  max-width: 1320px;
   margin: 0 auto;
 }
 
-.copyright {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--text-tertiary);
-}
-
-.links {
+.top {
   display: flex;
-  gap: 1.5rem;
-}
-
-.link {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--text-tertiary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.link:hover {
-  color: var(--accent);
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.75rem;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-tertiary);
-  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.brandText {
+  display: flex;
+}
+
+.brandTextSecondary {
+  color: var(--color-lime);
+}
+
+.brandTextPrimary {
+  color: var(--color-white);
 }
 
 .brandIcon {
-  width: 1.25rem;
-  height: 1.25rem;
-  object-fit: contain;
+  width: 40px;
+  height: 40px;
 }
 
-.brandWhite {
-  color: #fff;
+.brandDescription {
+  max-width: 300px;
+  opacity: 0.7;
+  font-size: 0.95rem;
 }
 
-@media (max-width: 480px) {
-  .footer {
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  color: var(--color-white);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--color-lime);
+}
+
+.bottom {
+  text-align: center;
+}
+
+.copyright {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .links {
     flex-direction: column;
     gap: 0.75rem;
-    text-align: center;
   }
 }

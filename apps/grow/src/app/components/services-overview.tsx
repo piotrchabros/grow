@@ -14,27 +14,34 @@ export function ServicesOverview() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
-        <FadeIn>
-          <div className={styles.header}>
-            <span className={styles.sectionLabel}>{t('services.label')}</span>
-            <h2 className={styles.sectionTitle}>{t('services.title')}</h2>
-          </div>
-        </FadeIn>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <span className="section-subtitle">{t('services.label')}</span>
+          <h2 className="section-title">{t('services.title')}</h2>
+        </div>
         <div className={styles.grid}>
           {services.map((service, i) => (
             <FadeIn key={service.num} delay={i * 0.1}>
-              <a
-                href={import.meta.env[service.href]}
-                className={styles.card}
-              >
-                <span className={styles.cardNumber}>{service.num}</span>
-                <h3 className={styles.cardTitle}>
-                  {t(service.titleKey)}
-                  <span className={styles.cardArrow}>&rarr;</span>
-                </h3>
+              <div className={styles.card}>
+                <div className={styles.cardHeader}>
+                  <div className={styles.iconBox}>
+                    <span className={styles.cardNumber}>{service.num}</span>
+                  </div>
+                  <h3 className={styles.cardTitle}>{t(service.titleKey)}</h3>
+                </div>
                 <p className={styles.cardDescription}>{t(service.descKey)}</p>
-              </a>
+                <div className={styles.cardFooter}>
+                  <a
+                    href={import.meta.env[service.href]}
+                    className="ht_btn"
+                  >
+                    <span>{t('common.learnMore')}</span>
+                  </a>
+                  <a href={import.meta.env[service.href]} className={styles.arrowLink}>
+                    <img src="/assets/img/icon/arrow__01.png" alt="" />
+                  </a>
+                </div>
+              </div>
             </FadeIn>
           ))}
         </div>

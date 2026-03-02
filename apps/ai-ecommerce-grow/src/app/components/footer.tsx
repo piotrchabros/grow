@@ -14,8 +14,8 @@ export function Footer() {
         <a href="/privacy" className={styles.link}>{t('footer.privacy')}</a>
       </nav>
       <span className={styles.brand}>
-        <img src="/grow.png" alt="" className={styles.brandIcon} />
-        <span><span className={styles.brandWhite}>Grow</span>Group</span>
+        <img src="/grow.svg" alt="" className={styles.brandIcon} />
+        <span className={styles.brandText}><span className={styles.brandTextSecondary}>Grow</span><span className={styles.brandTextPrimary}>Group</span></span>
       </span>
     </footer>
   );

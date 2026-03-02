@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Manrope:wght@200..800&display=swap");
+
 *,
 *::before,
 *::after {
@@ -7,58 +10,50 @@
 }
 
 :root {
-  /* Backgrounds — cool blue-blacks */
-  --bg-deep: #020810;
-  --bg-primary: #060d1a;
-  --bg-elevated: #0c1527;
-  --bg-surface: #111d33;
+  /* Colors from dobee template */
+  --color-lime: #bee847;
+  --color-dark: #163f34;
+  --color-body: #5a6561;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
-  /* Text — cool whites */
-  --text-primary: #e4eaf4;
-  --text-secondary: #68788f;
-  --text-tertiary: #3a4a62;
+  /* Backgrounds */
+  --bg-primary: var(--color-white);
+  --bg-secondary: #f7f7f7;
+  --bg-dark: var(--color-dark);
 
-  /* Accent — electric cyan neon */
-  --accent: #00e5ff;
-  --accent-light: #5ef5ff;
-  --accent-dim: #006b7a;
+  /* Text */
+  --text-primary: var(--color-dark);
+  --text-secondary: var(--color-body);
+  --text-white: var(--color-white);
 
-  /* Secondary accent — hot pink */
-  --accent-secondary: #ff2d78;
-
-  /* Neon glow values */
-  --glow-sm: 0 0 10px rgba(0, 229, 255, 0.25);
-  --glow-md: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
-  --glow-lg: 0 0 30px rgba(0, 229, 255, 0.4), 0 0 80px rgba(0, 229, 255, 0.15), 0 0 120px rgba(0, 229, 255, 0.05);
-  --glow-text: 0 0 12px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.2);
-
-  /* Borders */
-  --border: #111d33;
-  --border-light: #1a2940;
+  /* Accent */
+  --accent: var(--color-lime);
+  --accent-hover: var(--color-dark);
 
   /* Typography */
-  --font-display: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Geologica', sans-serif;
+  --font-body: 'Manrope', sans-serif;
 
   /* Spacing */
-  --section-padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
+  --section-padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
 
   /* Megamenu theme variables */
-  --color-surface: var(--bg-primary);
-  --color-surface-alt: var(--bg-elevated);
-  --color-surface-hover: var(--bg-surface);
-  --color-border: var(--border);
-  --color-primary: var(--accent);
-  --color-primary-hover: var(--accent-light);
-  --color-primary-dark: var(--accent-dim);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-primary-text: var(--bg-primary);
+  --color-surface: var(--color-white);
+  --color-surface-alt: #f8f9fa;
+  --color-surface-hover: #e9ecef;
+  --color-border: #dee2e6;
+  --color-primary: var(--color-dark);
+  --color-primary-hover: var(--color-lime);
+  --color-primary-dark: #0f2b23;
+  --color-text-primary: var(--color-dark);
+  --color-text-secondary: var(--color-body);
+  --color-primary-text: var(--color-white);
 }
 
 html {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,26 +61,9 @@ html {
 }
 
 body {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   background: var(--bg-primary);
   overflow-x: hidden;
-}
-
-/* Subtle scanline overlay for cyberpunk texture */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.02;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 229, 255, 0.03) 2px,
-    rgba(0, 229, 255, 0.03) 4px
-  );
 }
 
 img,
@@ -107,62 +85,79 @@ select {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Utility: display font */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  color: var(--color-dark);
+  line-height: 1.2;
+  font-weight: 700;
 }
 
-/* Keyframes */
+/* Global Utility Classes from template */
+.ht_btn {
+  display: inline-block;
+  background: var(--color-lime);
+  color: var(--color-dark);
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 30px;
+  border: 2px solid var(--color-dark);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.ht_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-dark);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.ht_btn:hover {
+  color: var(--color-white);
+}
+
+.ht_btn:hover::before {
+  width: 100%;
+}
+
+.section-subtitle {
+  display: inline-block;
+  background: #eef8d3;
+  color: var(--color-dark);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes drawLine {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: var(--glow-sm);
-  }
-  50% {
-    box-shadow: var(--glow-md);
-  }
-}
-
-@keyframes neonTextPulse {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
-  }
-  50% {
-    text-shadow: var(--glow-text);
   }
 }

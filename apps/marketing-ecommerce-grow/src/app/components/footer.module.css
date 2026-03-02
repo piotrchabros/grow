@@ -12,7 +12,7 @@
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 300;
-  color: var(--text-tertiary);
+  color: var(--color-white);
 }
 
 .links {
@@ -24,7 +24,7 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--text-tertiary);
+  color: var(--color-white);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -40,8 +40,20 @@
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-tertiary);
+  color: var(--color-white);
   letter-spacing: -0.02em;
+}
+
+.brandText {
+  display: flex;
+}
+
+.brandTextSecondary {
+  color: var(--color-lime);
+}
+
+.brandTextPrimary {
+  color: var(--color-white);
 }
 
 .brandIcon {
