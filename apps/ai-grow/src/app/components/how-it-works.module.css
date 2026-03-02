@@ -1,7 +1,8 @@
 .section {
   padding: var(--section-padding);
-  background: var(--bg-deep);
+  background: var(--bg-primary);
   overflow: hidden;
+  position: relative;
 }
 
 .inner {
@@ -15,21 +16,32 @@
 }
 
 .sectionLabel {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
   margin-bottom: 1rem;
 }
 
+.sectionLabel::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
 .sectionTitle {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
 }
 
 .timeline {
@@ -39,22 +51,22 @@
   position: relative;
 }
 
-/* Horizontal connecting line */
+/* Connecting line between steps */
 .timeline::before {
   content: '';
   position: absolute;
   top: 1.6rem;
   left: 1.6rem;
   right: 1.6rem;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--accent-dim) 10%,
-    var(--accent-dim) 90%,
+    var(--accent) 10%,
+    var(--accent) 90%,
     transparent
   );
-  box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+  opacity: 0.35;
 }
 
 .step {
@@ -65,46 +77,44 @@
 .stepNumber {
   width: 3.2rem;
   height: 3.2rem;
-  border: 1px solid var(--accent-dim);
+  background: var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  background: var(--bg-deep);
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .step:hover .stepNumber {
-  border-color: var(--accent);
-  box-shadow: var(--glow-md);
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(190, 232, 71, 0.4);
 }
 
 .stepNumber span {
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.02em;
 }
 
 .stepTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-heading);
   margin-bottom: 0.75rem;
 }
 
 .stepDescription {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 300;
+  font-size: 0.92rem;
+  font-weight: 400;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
@@ -118,13 +128,13 @@
     bottom: 0;
     left: 1.6rem;
     right: auto;
-    width: 1px;
+    width: 2px;
     height: auto;
     background: linear-gradient(
       to bottom,
       transparent,
-      var(--accent-dim) 10%,
-      var(--accent-dim) 90%,
+      var(--accent) 10%,
+      var(--accent) 90%,
       transparent
     );
   }
