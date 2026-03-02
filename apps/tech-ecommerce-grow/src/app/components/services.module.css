@@ -1,9 +1,40 @@
 .section {
   padding: var(--section-padding);
-  background: var(--bg-deep);
+  background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--shape-teal);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  left: -30px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.25;
+  animation: spinSlow 20s linear infinite;
+  pointer-events: none;
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -23,21 +54,19 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
 }
 
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  background: var(--border);
+  gap: 1.5rem;
 }
 
 .card {
@@ -45,23 +74,30 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(2rem, 4vw, 4rem);
   padding: clamp(2rem, 4vw, 3rem);
-  background: var(--bg-deep);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  background: var(--bg-elevated);
-  box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.03);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
 }
 
 .card:hover .cardTitle {
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(4px);
 }
 
 .card:hover .cardNumber {
-  color: var(--accent);
-  text-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+  background: var(--accent);
+  color: var(--bg-dark);
 }
 
 .cardLeft {
@@ -70,32 +106,50 @@
 }
 
 .cardNumber {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-dark);
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-dim);
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cardTitle {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
   margin-bottom: 1rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .cardDescription {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 440px;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardArrow {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: var(--accent-hover);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .cardRight {
@@ -129,7 +183,6 @@
   height: 5px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -142,4 +195,14 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .section::before,
+  .section::after {
+    display: none;
+  }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

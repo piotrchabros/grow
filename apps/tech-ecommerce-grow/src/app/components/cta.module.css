@@ -1,51 +1,48 @@
 .section {
   position: relative;
-  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 5vw, 3rem);
-  background: var(--bg-deep);
-  text-align: center;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3rem);
+  background: var(--bg-cream);
   overflow: hidden;
-}
-
-/* Decorative ring with neon glow */
-.section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(300px, 45vw, 550px);
-  height: clamp(300px, 45vw, 550px);
-  border: 1px solid var(--accent-dim);
-  border-radius: 50%;
-  box-shadow: var(--glow-sm), inset var(--glow-sm);
-  opacity: 0.4;
-  animation: neonPulse 6s ease-in-out infinite;
 }
 
 .inner {
   position: relative;
-  z-index: 1;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  background: var(--accent);
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.25rem;
+  color: var(--bg-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .subtitle {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--bg-dark);
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -55,23 +52,41 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-deep);
-  background: var(--accent);
+  color: var(--color-white);
+  background: var(--bg-dark);
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: var(--glow-md);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg-dark-deep);
+  border-radius: var(--radius-pill);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
 }
 
 .button:hover {
-  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: var(--glow-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .buttonArrow {
+  position: relative;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
@@ -79,11 +94,51 @@
   transform: translateX(4px);
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+/* Decorative shapes */
+.shapeSquare {
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--bg-dark);
+  border-radius: 6px;
+  opacity: 0.15;
+  animation: floatBob 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shapeDot {
+  position: absolute;
+  bottom: 18%;
+  left: 10%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  opacity: 0.15;
+  animation: floatBobSlow 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
   }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
+
+  .shapeSquare,
+  .shapeDot {
+    display: none;
   }
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes floatBobSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }

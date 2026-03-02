@@ -1,11 +1,42 @@
 .section {
   padding: var(--section-padding);
-  background: var(--bg-deep);
+  background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  background: var(--shape-teal);
+  border-radius: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 3%;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: spinSlow 18s linear infinite;
 }
 
 .inner {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -23,21 +54,19 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
 }
 
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  background: var(--border);
+  gap: 1rem;
 }
 
 .card {
@@ -45,23 +74,30 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(2rem, 4vw, 4rem);
   padding: clamp(2rem, 4vw, 3rem);
-  background: var(--bg-deep);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-  background: var(--bg-elevated);
-  box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.03);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
 }
 
 .card:hover .cardTitle {
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
 }
 
 .card:hover .cardNumber {
-  color: var(--accent);
-  text-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+  background: var(--accent-hover);
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(4px);
 }
 
 .cardLeft {
@@ -70,32 +106,44 @@
 }
 
 .cardNumber {
-  display: block;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-dim);
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.8rem;
   margin-bottom: 1.5rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: background 0.3s ease;
 }
 
 .cardTitle {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-heading);
   margin-bottom: 1rem;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
+  transition: color 0.3s ease;
 }
 
 .cardDescription {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 440px;
+}
+
+.cardArrow {
+  font-size: 1.25rem;
+  color: var(--accent-hover);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .cardRight {
@@ -129,7 +177,11 @@
   height: 5px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 768px) {
@@ -142,4 +194,14 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .section::before,
+  .section::after {
+    display: none;
+  }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

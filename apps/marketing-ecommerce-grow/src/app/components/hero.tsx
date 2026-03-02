@@ -7,6 +7,9 @@ export function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
+        <div className={styles.shapeCircle} aria-hidden="true" />
+        <div className={styles.shapeDot} aria-hidden="true" />
+        <div className={styles.shapeRing} aria-hidden="true" />
         <span className={styles.eyebrow}>
           <span className={styles.eyebrowLine} />
           {t('hero.eyebrow')}
@@ -34,7 +37,7 @@ export function Hero() {
           </div>
         </div>
         <a href={import.meta.env.VITE_CALCOM_URL} className={styles.cta}>
-          {t('hero.cta')}
+          <span style={{ position: 'relative', zIndex: 2 }}>{t('hero.cta')}</span>
           <span className={styles.ctaArrow}>&rarr;</span>
         </a>
       </div>

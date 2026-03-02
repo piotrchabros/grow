@@ -1,11 +1,29 @@
 .section {
   padding: var(--section-padding);
-  background: var(--bg-primary);
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(190, 232, 71, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spinSlow 24s linear infinite;
 }
 
 .inner {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -21,21 +39,19 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
   margin-bottom: 1rem;
 }
 
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-on-dark);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: var(--border);
+  gap: 1rem;
 }
 
 .card {
@@ -44,12 +60,16 @@
   align-items: center;
   text-align: center;
   padding: clamp(2rem, 4vw, 3rem) 1.5rem;
-  background: var(--bg-primary);
-  transition: background-color 0.4s ease;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .card:hover {
-  background: var(--bg-elevated);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .value {
@@ -57,21 +77,21 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--accent);
-  text-shadow: var(--glow-text);
   line-height: 1;
   margin-bottom: 0.75rem;
 }
 
 .suffix {
   font-size: 0.6em;
-  color: var(--accent-light);
+  color: var(--accent);
+  opacity: 0.8;
 }
 
 .label {
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: var(--text-on-dark-muted);
   letter-spacing: 0.02em;
 }
 
@@ -85,4 +105,14 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@keyframes spinSlow {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

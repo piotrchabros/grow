@@ -4,43 +4,17 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
-  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 5vw, 3rem);
-  background: var(--bg-deep);
+  padding: clamp(8rem, 14vw, 11rem) clamp(1.5rem, 5vw, 3rem);
+  background: var(--bg-cream);
   overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -15%;
-  right: -10%;
-  width: clamp(400px, 50vw, 700px);
-  height: clamp(400px, 50vw, 700px);
-  border: 1px solid var(--accent-dim);
-  border-radius: 50%;
-  box-shadow: var(--glow-sm), inset var(--glow-sm);
-  opacity: 0;
-  animation: scaleIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 15%;
-  left: 5%;
-  width: clamp(80px, 10vw, 140px);
-  height: clamp(80px, 10vw, 140px);
-  border: 1px solid rgba(255, 45, 120, 0.3);
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 45, 120, 0.15), inset 0 0 20px rgba(255, 45, 120, 0.08);
-  opacity: 0;
-  animation: scaleIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
 }
 
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .eyebrow {
@@ -50,51 +24,48 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  color: var(--accent-hover);
   margin-bottom: 2rem;
   opacity: 0;
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .eyebrowLine {
   display: inline-block;
   width: 2rem;
-  height: 1px;
+  height: 2px;
   background: var(--accent);
-  box-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
   margin-right: 0.75rem;
   vertical-align: middle;
+  border-radius: 1px;
   transform-origin: left;
   animation: drawLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
   line-height: 1.05;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
+  color: var(--text-heading);
+  margin-bottom: 1.5rem;
   opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
 
 .titleAccent {
-  color: var(--accent);
-  text-shadow: var(--glow-text);
-  animation: neonTextPulse 4s ease-in-out infinite;
+  color: var(--accent-hover);
 }
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  font-weight: 300;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 400;
   line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 560px;
+  color: var(--text-primary);
+  max-width: 520px;
   margin-bottom: 2.5rem;
   opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
 .metricsBar {
@@ -102,8 +73,13 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
   opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
 }
 
 .metric {
@@ -116,8 +92,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  color: var(--accent);
-  text-shadow: var(--glow-text);
+  color: var(--text-heading);
   letter-spacing: -0.02em;
 }
 
@@ -127,16 +102,17 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
 }
 
 .metricDivider {
   width: 1px;
   height: 2.5rem;
-  background: var(--border-light);
+  background: var(--border);
 }
 
 .cta {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -146,26 +122,43 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-deep);
+  color: var(--bg-dark);
   background: var(--accent);
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: var(--glow-md);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-hover);
+  border-radius: var(--radius-pill);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.cta:hover::before {
+  transform: scaleX(1);
 }
 
 .cta:hover {
-  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: var(--glow-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .ctaArrow {
   display: inline-block;
+  position: relative;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
@@ -195,26 +188,79 @@
   width: 1px;
   height: 2rem;
   background: linear-gradient(to bottom, var(--accent-dim), transparent);
-  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Decorative shapes */
+.shapeCircle {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--shape-teal);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.shapeDot {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+  animation: floatBob 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shapeRing {
+  position: absolute;
+  bottom: 30%;
+  right: 12%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: spinSlow 20s linear infinite;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
   .metricsBar {
-    gap: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
   }
 
   .metricDivider {
-    height: 2rem;
+    width: 100%;
+    height: 1px;
+  }
+
+  .shapeCircle,
+  .shapeDot,
+  .shapeRing {
+    display: none;
   }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -223,17 +269,7 @@
   to { opacity: 1; }
 }
 
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 @keyframes drawLine {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
-}
-
-@keyframes neonTextPulse {
-  0%, 100% { text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); }
-  50% { text-shadow: 0 0 12px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.2); }
 }
