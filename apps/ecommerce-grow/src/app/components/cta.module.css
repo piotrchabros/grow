@@ -1,48 +1,90 @@
 .section {
-  position: relative;
-  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 5vw, 3rem);
-  background: var(--bg-deep);
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Decorative ring with neon glow */
-.section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(300px, 45vw, 550px);
-  height: clamp(300px, 45vw, 550px);
-  border: 1px solid var(--accent-dim);
-  border-radius: 50%;
-  box-shadow: var(--glow-sm), inset var(--glow-sm);
-  opacity: 0.4;
-  animation: neonPulse 6s ease-in-out infinite;
+  padding: var(--section-padding);
+  background: var(--bg-primary);
 }
 
 .inner {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
+  max-width: 1320px;
   margin: 0 auto;
+  background: var(--accent);
+  border-radius: 30px;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("assets/img/shape/home__03.png") no-repeat center center;
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -8%;
+  width: 300px;
+  height: 300px;
+  background: rgba(22, 63, 52, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-dark);
+  margin-bottom: 1rem;
 }
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+.shapeSquare {
+  position: absolute;
+  top: 12%;
+  right: 22%;
+  width: 28px;
+  height: 28px;
+  background: rgba(22, 63, 52, 0.08);
+  border-radius: 5px;
+  z-index: 3;
+  animation: floatBobSlow 5s ease-in-out infinite;
+  transform: rotate(45deg);
+}
+
+.shapeDot {
+  position: absolute;
+  bottom: 18%;
+  left: 40%;
+  width: 14px;
+  height: 14px;
+  background: rgba(22, 63, 52, 0.06);
+  border-radius: 50%;
+  z-index: 3;
+  animation: floatBob 7s ease-in-out 1s infinite;
 }
 
 .button {
@@ -55,23 +97,44 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-deep);
-  background: var(--accent);
+  color: var(--color-white);
+  background: var(--color-dark);
   border: none;
-  border-radius: 2px;
+  border-radius: var(--radius-pill);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: var(--glow-md);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg-dark-deep);
+  border-radius: var(--radius-pill);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
 }
 
 .button:hover {
-  background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: var(--glow-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .buttonArrow {
+  position: relative;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
@@ -79,11 +142,25 @@
   transform: translateX(4px);
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+@media (max-width: 991px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
   }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
+
+  .shapeSquare,
+  .shapeDot {
+    display: none;
   }
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatBobSlow {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-8px) rotate(48deg); }
 }
