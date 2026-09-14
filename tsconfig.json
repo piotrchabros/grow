@@ -68,6 +68,9 @@
     },
     {
       "path": "./libs/shared/megamenu"
+    },
+    {
+      "path": "./libs/shared/analytics"
     }
   ]
 }

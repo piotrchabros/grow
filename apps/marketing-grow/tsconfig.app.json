@@ -42,6 +42,9 @@
     },
     {
       "path": "../../libs/shared/megamenu/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/shared/analytics/tsconfig.lib.json"
     }
   ]
 }

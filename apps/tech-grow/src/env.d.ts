@@ -12,6 +12,8 @@ interface ImportMetaEnv {
   readonly VITE_URL_TECH_ECOMMERCE: string;
   readonly VITE_URL_AI_ECOMMERCE: string;
   readonly VITE_CALCOM_URL: string;
+  readonly VITE_POSTHOG_KEY: string;
+  readonly VITE_POSTHOG_HOST: string;
 }
 
 interface ImportMeta {
